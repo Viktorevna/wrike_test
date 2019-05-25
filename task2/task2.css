@@ -1,0 +1,32 @@
+.tic-tac-toe {
+  width: 250px;
+  height: 250px;
+  margin: 50px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  /* border: 2px solid #333333; */
+}
+.block {
+  width: 32%;
+  height: 32%;
+  font-family: Mandali;
+  font-size: 70px;
+  line-height: 60px;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.block:nth-child(3n-2) {
+  border-right: 2px solid #333333;
+}
+.block:nth-child(3n) {
+  border-left: 2px solid #333333;
+}
+.block:nth-child(-n+3) {
+  border-bottom: 2px solid #333333;
+}
+.block:nth-child(n+7) {
+  border-top: 2px solid #333333;
+}
