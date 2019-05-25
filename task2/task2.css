@@ -1,3 +1,7 @@
+body {
+  text-align: center;
+  font-family: Mandali;
+}
 .tic-tac-toe {
   width: 250px;
   height: 250px;
@@ -6,12 +10,10 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  /* border: 2px solid #333333; */
 }
 .block {
   width: 32%;
   height: 32%;
-  font-family: Mandali;
   font-size: 70px;
   line-height: 60px;
   display: flex;
@@ -29,4 +31,13 @@
 }
 .block:nth-child(n+7) {
   border-top: 2px solid #333333;
+}
+.button {
+  border: 1px solid #333333;
+  border-radius: 3px;
+  cursor: pointer;
+  background-color: white;
+}
+.button:focus {
+  outline: none;
 }
