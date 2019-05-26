@@ -19,6 +19,11 @@ body {
   display: flex;
   justify-content: center;
   cursor: pointer;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
 }
 .block:nth-child(3n-2) {
   border-right: 2px solid #333333;
