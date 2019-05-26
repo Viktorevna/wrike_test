@@ -95,25 +95,9 @@ function isComputerAWinner() {
   };
 };
 
-// for (let i = 0; i < $block.length; i++) {
-//   $block[i].addEventListener("click", function(){
-//     breakFlag = false;
-//     console.log("click");
-//     if ($block[i].textContent === "" && winFlag === false) {
-//       $block[i].textContent = userSign; //если выбранное пользователем место свободно, то на него ставится пользовательский знак
-//       isUserAWinner(); //если три пользовательских знака стоят в ряд, то пользователь победил
-//       isComputerCombinationWinning(); //если условие предыдущей функции не выполнено и если два знака компьютера стоят в ряд, а на месте третьего пусто, то на пустое место ставится знак компьютера
-//       isUserCombinationWinning(); //если условия предыдущих функций не выполнилось и если два пользовательских знака стоят в ряд, а на месте третьего пусто, то на пустое место ставится знак компьютера
-//       defineComputerBlock(); //если условия предыдущих функций не выполнилось, то знак компьютера ставится на первое свободное место
-//       isComputerAWinner(); //если три знака компьютера стоят в ряд, то компьютер победил
-//     };
-//   });
-// };
-
 $block.forEach(item => {
   item.addEventListener("click", function(){
     breakFlag = false;
-    console.log("clifvfvck");
     if (item.textContent === "" && winFlag === false) {
       item.textContent = userSign; //если выбранное пользователем место свободно, то на него ставится пользовательский знак
       isUserAWinner(); //если три пользовательских знака стоят в ряд, то пользователь победил

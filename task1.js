@@ -18,8 +18,8 @@ function binarySearch(array, element){
   let newElement = null;
   let leftBorder = 0;
   let rightBorder = newArray.length - 1;
-  while (leftBorder < rightBorder) {
-    let middle = Math.floor(leftBorder + ((rightBorder - leftBorder) / 2));
+  while (leftBorder <= rightBorder) {
+    let middle = Math.floor((rightBorder + leftBorder) / 2);
     newElement = newArray[middle][1];
     if (newElement < element)
       leftBorder = middle + 1;
