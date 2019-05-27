@@ -4,27 +4,30 @@ const $result = document.querySelector(".result");
 
 let userSign = "x";
 let computerSign = "o";
-let winningCombonations = ['012','345','678','036','147','258','048','246'];
+const winningCombonations = ['012','345','678','036','147','258','048','246'];
 let breakFlag = false; //флаг нахождения оптимального хода компьютера
 let winFlag = false; //флаг наличия победной компбинации
 
-let whoGoesFirst = Math.round(Math.random());
-let firstBlock = Math.round((Math.random() * 8)); //опредление первого хода
+const whoGoesFirst = Math.round(Math.random());
+const firstBlock = Math.round((Math.random() * 8)); //опредление первого хода
 if (whoGoesFirst === 1) {
   userSign = "o";
   computerSign = "x";
   $block[firstBlock].textContent = computerSign;
 };
 
+let first;
+let second;
+let third;
+
 function isUserAWinner() {
   for (let i = 0; i < winningCombonations.length; i++) {
-    let first = winningCombonations[i].slice(0, 1);
-    let second = winningCombonations[i].slice(1, 2);
-    let third = winningCombonations[i].slice(2, 3);
-    if ($block[first].textContent === userSign && $block[third].textContent === userSign && $block[second].textContent === userSign) {
+    first = winningCombonations[i].slice(0, 1);
+    second = winningCombonations[i].slice(1, 2);
+    third = winningCombonations[i].slice(2, 3);
+    if ($block[first].textContent === userSign && $block[third].textContent === userSign && $block[second].textContent === userSign && winFlag === false) {
       $result.textContent = "User won";
       winFlag = true;
-      break;
     }
   };
 };
@@ -32,9 +35,9 @@ function isUserAWinner() {
 function isComputerCombinationWinning() {
   if (winFlag === false)
     for (let i = 0; i < winningCombonations.length && breakFlag === false; i++) {
-      let first = winningCombonations[i].slice(0, 1);
-      let second = winningCombonations[i].slice(1, 2);
-      let third = winningCombonations[i].slice(2, 3);
+      first = winningCombonations[i].slice(0, 1);
+      second = winningCombonations[i].slice(1, 2);
+      third = winningCombonations[i].slice(2, 3);
       if ($block[first].textContent === computerSign && $block[second].textContent === computerSign && $block[third].textContent === "") {
         $block[third].textContent = computerSign;
         breakFlag = true;
@@ -53,9 +56,9 @@ function isComputerCombinationWinning() {
 function isUserCombinationWinning() {
   if (winFlag === false)
     for (let i = 0; i < winningCombonations.length && breakFlag === false; i++) {
-      let first = winningCombonations[i].slice(0, 1);
-      let second = winningCombonations[i].slice(1, 2);
-      let third = winningCombonations[i].slice(2, 3);
+      first = winningCombonations[i].slice(0, 1);
+      second = winningCombonations[i].slice(1, 2);
+      third = winningCombonations[i].slice(2, 3);
       if ($block[first].textContent === userSign && $block[second].textContent === userSign && $block[third].textContent === "") {
         $block[third].textContent = computerSign;
         breakFlag = true;
@@ -84,13 +87,12 @@ function defineComputerBlock() {
 function isComputerAWinner() {
   if (winFlag === false)
     for (let i = 0; i < winningCombonations.length; i++) {
-      let first = winningCombonations[i].slice(0, 1);
-      let second = winningCombonations[i].slice(1, 2);
-      let third = winningCombonations[i].slice(2, 3);
-      if ($block[first].textContent === computerSign && $block[second].textContent === computerSign && $block[third].textContent === computerSign) {
+      first = winningCombonations[i].slice(0, 1);
+      second = winningCombonations[i].slice(1, 2);
+      third = winningCombonations[i].slice(2, 3);
+      if ($block[first].textContent === computerSign && $block[second].textContent === computerSign && $block[third].textContent === computerSign && winFlag === false) {
         $result.textContent = "Computer won";
         winFlag = true;
-        break;
       };
   };
 };
